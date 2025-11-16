@@ -4,14 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Turnos - Sistema Colas</title>
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="styles/main.css" />
   <link rel="stylesheet" href="styles/forms.css" />
   <link rel="stylesheet" href="styles/tables.css" />
   <link rel="stylesheet" href="styles/dashboard.css" />
 </head>
+
 <body>
   <header class="topbar">
-    <div class="brand"><img src="assets/logo.png" alt="logo" class="logo-sm"/> Turnos</div>
+    <div class="brand">
+      <img src="assets/logo.png" alt="logo" class="logo-sm"/> 
+      Turnos
+    </div>
+
     <nav>
       <button onclick="location.href='dashboard.html'" class="nav-btn">Dashboard</button>
       <button onclick="location.href='patients.html'" class="nav-btn">Pacientes</button>
@@ -20,18 +27,28 @@
   </header>
 
   <main class="container">
+
+    <!--------- FORMULARIO --------->
     <section class="panel">
       <h2>Generar turno</h2>
+
       <form id="turnForm">
         <div class="grid-3">
+          
           <div>
             <label>Paciente</label>
-            <select id="selectPaciente"></select>
+            <select id="selectPaciente">
+              <option value="">Cargando pacientes...</option>
+            </select>
           </div>
+
           <div>
             <label>Área</label>
-            <select id="selectArea"></select>
+            <select id="selectArea">
+              <option value="">Cargando áreas...</option>
+            </select>
           </div>
+
           <div>
             <label>Priorización</label>
             <select id="priorizacion">
@@ -39,30 +56,50 @@
               <option value="Alta">Alta</option>
             </select>
           </div>
+
         </div>
+
         <button class="btn primary" type="submit">Generar turno</button>
         <p id="turnMsg" class="text-success"></p>
       </form>
     </section>
 
+    <!--------- TABLA --------->
     <section class="panel">
       <h2>Cola por área</h2>
+
       <label>Seleccionar área</label>
-      <select id="areaFilter"></select>
+      <select id="areaFilter">
+        <option value="">Cargando áreas...</option>
+      </select>
+
       <table class="table" id="queueTable">
-        <thead><tr><th>#</th><th>Turno</th><th>Paciente</th><th>Prioridad</th><th>Estado</th><th>Acciones</th></tr></thead>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Turno</th>
+            <th>Paciente</th>
+            <th>Prioridad</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
         <tbody></tbody>
       </table>
     </section>
+
   </main>
 
+  <!-- Scripts -->
   <script src="/socket.io/socket.io.js"></script>
   <script src="js/api.js"></script>
   <script src="js/auth.js"></script>
   <script src="js/turns.js"></script>
+
   <script>
     Auth.protectPage();
     Turns.init();
   </script>
 </body>
 </html>
+
