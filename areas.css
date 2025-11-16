@@ -1,0 +1,29 @@
+/* --- AREAS PAGE --- */
+
+#areasTable tbody tr td:last-child {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-edit {
+  background: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-edit:hover,
+.btn-delete:hover {
+  opacity: 0.8;
+}
