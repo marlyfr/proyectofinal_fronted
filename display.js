@@ -3,7 +3,6 @@ const Display = {
   areaId: null,
 
   init: async () => {
-    // Detectar área por URL
     const params = new URLSearchParams(window.location.search);
     Display.areaId = params.get('areaId') ? Number(params.get('areaId')) : null;
 
@@ -12,7 +11,6 @@ const Display = {
     await Display.loadInitial();
   },
 
-  // Reloj permanente
   initClock: () => {
     const el = document.getElementById('timeClock');
     const tick = () => {
@@ -24,12 +22,9 @@ const Display = {
     setInterval(tick, 1000);
   },
 
-  // Socket para actualizar display
   initSocket: () => {
     try {
       Display.socket = io();
-
-      // Cualquier cambio en turnos refresca pantalla
       Display.socket.on("turno:update", () => Display.loadInitial());
       Display.socket.on("turno:llamado", () => Display.loadInitial());
     } catch (e) {
@@ -37,12 +32,11 @@ const Display = {
     }
   },
 
-  // Carga inicial desde backend
   loadInitial: async () => {
     try {
       const url = Display.areaId
-        ? `/api/display/${Display.areaId}`
-        : `/api/display`;
+        ? `/display/${Display.areaId}`
+        : `/display`;
 
       const data = await Api.get(url);
       Display.render(data);
@@ -51,20 +45,16 @@ const Display = {
     }
   },
 
-  // Renderizar en HTML
   render: (data) => {
-    // Nombre del área
     const areaName =
       data?.area?.NombreArea ??
       (data?.IdArea ? `Área ${data.IdArea}` : "Área");
 
     document.getElementById("areaName").textContent = areaName;
 
-    // Turno actual
     document.getElementById("currentTurn").textContent =
       data?.TurnoActual || "—";
 
-    // Próximos turnos
     const nextList = document.getElementById("nextList");
     const proximos = data?.proximos ?? [];
 
@@ -77,5 +67,4 @@ const Display = {
       .join("");
   },
 };
-
 
