@@ -1,9 +1,85 @@
-body.display-bg{background:linear-gradient(180deg,var(--blue-dark),#032a4f);color:var(--white);height:100vh;margin:0;font-family:Inter,Arial}
-.display-top{display:flex;justify-content:space-between;padding:18px 28px;align-items:center}
-.area-name{font-size:28px;font-weight:700}
-.clock{font-size:18px;opacity:0.9}
-.display-main{display:flex;gap:32px;align-items:flex-start;justify-content:center;padding:40px}
-.current, .next{background:rgba(255,255,255,0.06);padding:28px;border-radius:12px;min-width:320px}
-.turn-large{font-size:84px;font-weight:900;letter-spacing:2px}
-.label{font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:6px}
-.next ol{font-size:24px;margin:0;padding-left:18px}
+/* Fondo general */
+body.display-bg {
+  background: #0d1117;
+  color: #fff;
+  font-family: "Segoe UI", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top bar */
+.display-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+  background: #161b22;
+  border-bottom: 3px solid #30363d;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.area-name {
+  color: #58a6ff;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.clock {
+  font-size: 34px;
+}
+
+/* Main layout */
+.display-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  padding: 40px;
+}
+
+.panel-block {
+  background: #161b22;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Titles */
+.label-title {
+  font-size: 28px;
+  font-weight: 600;
+  border-bottom: 2px solid #30363d;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: #8b949e;
+}
+
+/* Turno actual */
+.turn-large {
+  font-size: 130px;
+  font-weight: bold;
+  text-align: center;
+  color: #58a6ff;
+  margin-top: 30px;
+}
+
+/* Lista de siguientes */
+#nextList {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  font-size: 48px;
+  line-height: 1.4;
+}
+
+#nextList li {
+  padding: 10px 0;
+  border-bottom: 1px solid #30363d;
+  color: #c9d1d9;
+}
