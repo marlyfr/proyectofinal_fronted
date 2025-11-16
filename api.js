@@ -1,5 +1,5 @@
 // API wrapper - URL del backend
-const BASE_URL = 'https://proyectofinal-3v5l.onrender.com';
+const BASE_URL = 'https://proyectofinal-1-81b6.onrender.com';
 
 const Api = {
   _url: (path) => BASE_URL + path,
@@ -55,3 +55,4 @@ const Api = {
     return data;
   }
 };
+
