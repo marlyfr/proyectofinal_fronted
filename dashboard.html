@@ -1,44 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dashboard - Sistema Colas</title>
-  <link rel="stylesheet" href="styles/main.css" />
-  <link rel="stylesheet" href="styles/dashboard.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Colas</title>
+
+    <!-- ESTILOS BONITOS -->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f6f9;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: #2c3e50;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .navbar img {
+            height: 40px;
+        }
+
+        .navbar a, .navbar button {
+            color: white;
+            text-decoration: none;
+            background: #34495e;
+            padding: 10px 15px;
+            border-radius: 6px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .navbar a:hover, .navbar button:hover {
+            background: #1abc9c;
+        }
+
+        /* CONTENIDO */
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: center;
+            color: #555;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand"><img src="assets/logo.png" alt="logo" class="logo-sm"/> Sistema Colas</div>
-    <nav>
-      <button id="btnPatients" class="nav-btn">Pacientes</button>
-      <button id="btnTurns" class="nav-btn">Turnos</button>
-      <button id="btnAreas" class="nav-btn">Áreas</button>
-      <a id="btnDisplay" href="display.html" target="_blank" class="nav-btn">Display</a>
-      <button id="logoutBtn" class="nav-btn danger">Cerrar sesión</button>
-    </nav>
-  </header>
 
-  <main class="container">
-    <section class="cards-grid" id="cardsGrid"></section>
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <img src="ruta-del-logo.png" alt="Logo Sistema Colas">
 
-    <section id="mainContent" class="panel">
-      <h2 id="welcomeTitle">Bienvenido</h2>
-      <p id="welcomeDesc">Panel general del sistema. Usa la barra superior para navegar.</p>
-    </section>
-  </main>
+        <a href="pacientes.html">Pacientes</a>
+        <a href="turnos.html">Turnos</a>
+        <a href="areas.html">Áreas</a>
+        <a href="display.html">Display</a>
 
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="js/api.js"></script>
-  <script src="js/auth.js"></script>
-  <script src="js/dashboard.js"></script>
-  <script>
-    Auth.protectPage();
-    Dashboard.init();
-    document.getElementById('btnPatients').addEventListener('click', ()=> location.href = 'patients.html');
-    document.getElementById('btnTurns').addEventListener('click', ()=> location.href = 'turns.html');
-    document.getElementById('btnAreas').addEventListener('click', ()=> location.href = 'areas.html');
-    document.getElementById('logoutBtn').addEventListener('click', ()=> Auth.logout());
-  </script>
+        <button onclick="cerrarSesion()">Cerrar sesión</button>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="container">
+        <h1>Bienvenido</h1>
+        <p>Panel general del sistema. Usa la barra superior para navegar.</p>
+    </div>
+
+    <script>
+        function cerrarSesion() {
+            localStorage.removeItem("token");
+            window.location.href = "index.html";
+        }
+    </script>
+
 </body>
 </html>
