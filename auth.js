@@ -8,8 +8,8 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     msg.textContent = "";
 
     try {
-        // Petición correcta al backend en Render
-        const data = await Api.post("/auth/login", { Usuario, password });
+        // RUTA CORRECTA
+        const data = await Api.post("/api/auth/login", { Usuario, password });
 
         localStorage.setItem("token", data.token);
         localStorage.setItem("user", JSON.stringify(data.user));
