@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <title>Sistema de Colas - Login</title>
-    <link rel="stylesheet" href="styles/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso al Sistema</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Iconos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- TU CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="login-wrapper">
-
+    <div class="login-container">
         <div class="login-card">
 
-            <img 
-                src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png" 
-                class="logo" 
-                alt="Hospital Logo"
-            />
+            <div class="logo">
+                <i class="bi bi-shield-lock"></i>
+            </div>
 
-            <h2>Sistema de Colas Hospitalarias</h2>
-            <p class="subtitle">Acceso al Panel Administrativo</p>
+            <h3 class="titulo">Iniciar Sesión</h3>
 
-            <form id="loginForm" class="login-form">
-                <div class="form-group">
+            <form id="loginForm">
+
+                <div class="form-group mb-3">
                     <label>Usuario</label>
-                    <!-- ID cambiado a usuario -->
-                    <input type="text" id="usuario" required placeholder="Ingresa tu usuario">
+                    <input type="text" id="Usuario" class="form-control" required>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label>Contraseña</label>
-                    <input type="password" id="password" required placeholder="Ingresa tu contraseña">
+                    <input type="password" id="password" class="form-control" required>
                 </div>
 
-                <button type="submit" class="btn-login">Ingresar</button>
+                <button class="btn btn-primary w-100 btn-login">Ingresar</button>
+
             </form>
 
-            <p id="loginError" class="error-text"></p>
+            <p id="msg" class="text-danger text-center mt-3 fw-bold"></p>
 
         </div>
-
     </div>
 
-    <script src="js/auth.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Tu JS -->
+    <script src="api.js"></script>
+    <script src="auth.js"></script>
 
 </body>
 </html>
