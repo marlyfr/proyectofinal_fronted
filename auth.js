@@ -1,7 +1,3 @@
-// ======================
-// LOGIN
-// ======================
-
 document.getElementById("loginForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -12,15 +8,13 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     msg.textContent = "";
 
     try {
-        // Petición al backend en Render
-        const data = await Api.post("/api/auth/login", { Usuario, password });
+        // Petición correcta al backend en Render
+        const data = await Api.post("/auth/login", { Usuario, password });
 
-        // Guardar token y datos de usuario
         localStorage.setItem("token", data.token);
         localStorage.setItem("user", JSON.stringify(data.user));
 
-        // REDIRECCIÓN A LA SIGUIENTE VENTANA
-        window.location.href = "dashboard.html";  // ← CAMBIA ESTO AL HTML QUE TU QUIERAS
+        window.location.href = "dashboard.html";
 
     } catch (err) {
         msg.textContent = err.message;
