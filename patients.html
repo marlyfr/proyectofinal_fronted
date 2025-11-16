@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pacientes - Sistema Colas</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/forms.css" />
+  <link rel="stylesheet" href="styles/tables.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><img src="assets/logo.png" alt="logo" class="logo-sm"/> Pacientes</div>
+    <nav>
+      <button onclick="location.href='dashboard.html'" class="nav-btn">Dashboard</button>
+      <button onclick="location.href='turns.html'" class="nav-btn">Turnos</button>
+      <button onclick="Auth.logout()" class="nav-btn danger">Cerrar sesión</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Registrar nuevo paciente</h2>
+      <form id="patientForm">
+        <div class="grid-2">
+          <div>
+            <label>DPI</label>
+            <input id="dpi" />
+          </div>
+          <div>
+            <label>Nombre completo *</label>
+            <input id="nombreCompleto" required />
+          </div>
+        </div>
+        <div class="grid-3">
+          <div><label>Fecha nacimiento</label><input id="fechaNacimiento" type="date"/></div>
+          <div><label>Teléfono</label><input id="telefono"/></div>
+          <div><label>Correo</label><input id="correo" type="email"/></div>
+        </div>
+        <div>
+          <label>Dirección</label>
+          <input id="direccion" />
+        </div>
+        <button class="btn primary" type="submit">Guardar paciente</button>
+        <p id="patientMsg" class="text-success"></p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Lista de pacientes</h2>
+      <input id="searchPatient" placeholder="Buscar por nombre o DPI" />
+      <table class="table" id="patientsTable">
+        <thead>
+          <tr><th>ID</th><th>DPI</th><th>Nombre</th><th>Teléfono</th><th>Correo</th><th>Acciones</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/patients.js"></script>
+  <script>
+    Auth.protectPage();
+    Patients.init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+body.display-bg{background:linear-gradient(180deg,var(--blue-dark),#032a4f);color:var(--white);height:100vh;margin:0;font-family:Inter,Arial}
+.display-top{display:flex;justify-content:space-between;padding:18px 28px;align-items:center}
+.area-name{font-size:28px;font-weight:700}
+.clock{font-size:18px;opacity:0.9}
+.display-main{display:flex;gap:32px;align-items:flex-start;justify-content:center;padding:40px}
+.current, .next{background:rgba(255,255,255,0.06);padding:28px;border-radius:12px;min-width:320px}
+.turn-large{font-size:84px;font-weight:900;letter-spacing:2px}
+.label{font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:6px}
+.next ol{font-size:24px;margin:0;padding-left:18px}

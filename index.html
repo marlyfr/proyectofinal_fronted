@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sistema de Colas - Login</title>
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+
+    <div class="login-wrapper">
+
+        <div class="login-card">
+
+            <img 
+                src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png" 
+                class="logo" 
+                alt="Hospital Logo"
+            />
+
+            <h2>Sistema de Colas Hospitalarias</h2>
+            <p class="subtitle">Acceso al Panel Administrativo</p>
+
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label>Usuario</label>
+                    <!-- ID cambiado a usuario -->
+                    <input type="text" id="usuario" required placeholder="Ingresa tu usuario">
+                </div>
+
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="password" required placeholder="Ingresa tu contraseña">
+                </div>
+
+                <button type="submit" class="btn-login">Ingresar</button>
+            </form>
+
+            <p id="loginError" class="error-text"></p>
+
+        </div>
+
+    </div>
+
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard - Sistema Colas</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/dashboard.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><img src="assets/logo.png" alt="logo" class="logo-sm"/> Sistema Colas</div>
+    <nav>
+      <button id="btnPatients" class="nav-btn">Pacientes</button>
+      <button id="btnTurns" class="nav-btn">Turnos</button>
+      <button id="btnAreas" class="nav-btn">Áreas</button>
+      <a id="btnDisplay" href="display.html" target="_blank" class="nav-btn">Display</a>
+      <button id="logoutBtn" class="nav-btn danger">Cerrar sesión</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="cards-grid" id="cardsGrid"></section>
+
+    <section id="mainContent" class="panel">
+      <h2 id="welcomeTitle">Bienvenido</h2>
+      <p id="welcomeDesc">Panel general del sistema. Usa la barra superior para navegar.</p>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script>
+    Auth.protectPage();
+    Dashboard.init();
+    document.getElementById('btnPatients').addEventListener('click', ()=> location.href = 'patients.html');
+    document.getElementById('btnTurns').addEventListener('click', ()=> location.href = 'turns.html');
+    document.getElementById('btnAreas').addEventListener('click', ()=> location.href = 'areas.html');
+    document.getElementById('logoutBtn').addEventListener('click', ()=> Auth.logout());
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Display - Sistema Colas</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/display.css" />
+</head>
+<body class="display-bg">
+  <div class="display-top">
+    <div id="areaName" class="area-name">Área</div>
+    <div id="timeClock" class="clock"></div>
+  </div>
+
+  <div class="display-main">
+    <div class="current">
+      <div class="label">TURNOS EN ATENCIÓN</div>
+      <div id="currentTurn" class="turn-large">—</div>
+    </div>
+    <div class="next">
+      <div class="label">SIGUIENTES</div>
+      <ol id="nextList"></ol>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/display.js"></script>
+  <script>
+    Display.init();
+  </script>
+</body>
+</html>

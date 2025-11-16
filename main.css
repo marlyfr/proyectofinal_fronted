@@ -1,0 +1,42 @@
+:root{
+  --blue:#1B76D1;
+  --blue-dark:#0E4C8A;
+  --white:#ffffff;
+  --gray:#f1f4f8;
+  --text:#333;
+  --muted:#6b7280;
+  --success:#2ecc71;
+  --danger:#e74c3c;
+  --card-radius:12px;
+  --shadow: 0 6px 18px rgba(10,30,60,0.08);
+  font-family: Inter, system-ui, Arial, sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;color:var(--text);background:linear-gradient(180deg,#f7fbff,#f1f6fb);}
+.container{max-width:1100px;margin:28px auto;padding:18px;}
+.center-column{display:flex;align-items:center;justify-content:center;height:100vh;}
+.card{background:var(--white);border-radius:var(--card-radius);box-shadow:var(--shadow);padding:18px;}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:var(--white);box-shadow:var(--shadow);position:sticky;top:0;z-index:10}
+.brand{display:flex;align-items:center;gap:12px;font-weight:600;color:var(--blue-dark)}
+.logo{width:110px}
+.logo-sm{height:34px}
+.nav-btn{background:transparent;border:none;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600}
+.nav-btn:hover{background:#f0f6fb}
+.btn{padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+.btn.primary{background:var(--blue);color:var(--white)}
+.btn.outline{background:transparent;border:1px solid #e5eefc;color:var(--blue)}
+.btn.danger{background:var(--danger);color:white}
+.card.login-card{width:360px;text-align:center;padding:28px}
+h1,h2{color:var(--blue-dark)}
+.text-error{color:var(--danger);margin-top:8px}
+.text-success{color:var(--success);margin-top:8px}
+.panel{background:var(--white);padding:16px;border-radius:10px;box-shadow:var(--shadow);margin-bottom:18px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.table{width:100%;border-collapse:collapse}
+.table th, .table td{padding:10px;border-bottom:1px solid #eef3f8;text-align:left}
+input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef7;background:#fff}
+label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+.cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.card-mini{padding:14px;border-radius:12px;background:linear-gradient(180deg,var(--white),#fbfdff);display:flex;flex-direction:column;gap:8px}
+.small{font-size:12px;color:var(--muted)}

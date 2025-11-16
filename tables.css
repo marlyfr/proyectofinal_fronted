@@ -1,0 +1,7 @@
+.table thead th{background:#f7fbff;color:var(--blue-dark;font-weight:700)}
+.table tbody tr:hover{background:#fbfdff}
+.action-btn{padding:6px 8px;border-radius:8px;border:none;cursor:pointer}
+.action-btn.small{font-size:13px}
+.action-primary{background:var(--blue);color:white}
+.action-danger{background:var(--danger);color:white}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#eef6ff;color:var(--blue-dark);font-weight:700}
