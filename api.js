@@ -34,6 +34,7 @@ export const Api = {
 
   put: async (url, body) => {
     const token = localStorage.getItem("token");
+
     const res = await fetch(API_BASE + url, {
       method: "PUT",
       headers: {
@@ -50,6 +51,7 @@ export const Api = {
 
   del: async (url) => {
     const token = localStorage.getItem("token");
+
     const res = await fetch(API_BASE + url, {
       method: "DELETE",
       headers: {
@@ -63,5 +65,4 @@ export const Api = {
     return data;
   }
 };
-
 
