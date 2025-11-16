@@ -8,7 +8,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     msg.textContent = "";
 
     try {
-        // RUTA CORRECTA
+        // ✔ Ruta correcta para tu backend
         const data = await Api.post("/api/auth/login", { Usuario, password });
 
         localStorage.setItem("token", data.token);
@@ -20,3 +20,5 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
         msg.textContent = err.message;
     }
 });
+
+
