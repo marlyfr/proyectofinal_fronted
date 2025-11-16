@@ -1,103 +1,62 @@
 /* Fondo general */
 body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-    font-family: "Segoe UI", Arial, sans-serif;
-}
-
-/* Centrado de la tarjeta */
-.login-wrapper {
+    background: linear-gradient(135deg, #4c6ef5, #7950f2);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor */
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 /* Tarjeta */
 .login-card {
-    width: 380px;
     background: #ffffff;
-    padding: 35px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-    animation: fadeIn 0.5s ease-in-out;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    animation: fadeIn 0.8s ease;
 }
 
-/* Animación suave */
+/* Animación */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
+    from { opacity: 0; transform: translateY(25px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Logo */
+/* Icono logo */
 .logo {
-    width: 90px;
-    margin-bottom: 10px;
+    font-size: 50px;
+    text-align: center;
+    color: #4c6ef5;
 }
 
-/* Títulos */
-h2 {
-    margin: 0;
-    color: #0d47a1;
-    font-size: 22px;
-}
-
-.subtitle {
-    color: #555;
-    font-size: 14px;
+/* Título */
+.titulo {
+    text-align: center;
     margin-bottom: 25px;
-}
-
-/* Campos */
-.form-group {
-    text-align: left;
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    font-size: 14px;
-    color: #0d47a1;
-    font-weight: bold;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border-radius: 6px;
-    border: 1px solid #90caf9;
-    background: #f4f9ff;
-}
-
-input:focus {
-    outline: none;
-    border-color: #42a5f5;
-    box-shadow: 0 0 4px rgba(66,165,245,0.5);
+    font-weight: 600;
+    color: #333;
 }
 
 /* Botón */
 .btn-login {
-    width: 100%;
-    padding: 12px;
-    background: #1565c0;
-    color: white;
-    font-size: 16px;
-    border-radius: 6px;
+    background: #4c6ef5 !important;
     border: none;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: 0.2s;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .btn-login:hover {
-    background: #0d47a1;
+    background: #3a54d8 !important;
 }
 
-/* Error */
-.error-text {
-    margin-top: 15px;
-    color: #d32f2f;
-    font-weight: bold;
-}
